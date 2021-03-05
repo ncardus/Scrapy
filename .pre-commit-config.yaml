@@ -1,0 +1,20 @@
+fail_fast: false
+default_language_version:
+  python: python3.8
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 19.10b0
+    hooks:
+      - id: black
+        args: [--line-length=100, --safe]
+        language_version: python3
+  - repo: git://github.com/pre-commit/pre-commit-hooks
+    rev: v1.3.0 # Use the ref you want to point at
+    hooks:
+      - id: trailing-whitespace
+      - id: check-ast
+  # - repo: https://gitlab.com/iamlikeme/nbhooks
+  #   rev: 1.0.0 # Set to the most recent version
+  #   hooks:
+  #     - id: nb-ensure-clean
+  #       args: [--meta, ExecuteTime] # Optional blacklist of metadata keys (you can use regex)
